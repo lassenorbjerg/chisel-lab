@@ -17,7 +17,7 @@ class MaxFinder extends Module {
 
   // ***** your code starts here *****
 
-  // res := ????
+  // max := ????
 
   // ***** your code ends here *****
 
