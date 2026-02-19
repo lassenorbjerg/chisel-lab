@@ -11,8 +11,13 @@ class Accu extends Module {
 
   // ***** your code starts here *****
 
-  res := 0.U // dummy code to make it compile
-
+  val acc_reg = RegInit(0.U(8.W))
+  when (io.setZero) {
+    acc_reg := 0.U
+  } .otherwise {
+    acc_reg := acc_reg + io.din
+  }
+  res := acc_reg
   // ***** your code ends here *****
 
   io.dout := res

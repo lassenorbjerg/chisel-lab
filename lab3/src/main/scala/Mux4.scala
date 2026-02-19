@@ -20,7 +20,23 @@ class Mux4 extends Module {
   // and connect the input and output ports.
 
   // below is dummy code to make this example compile
-  io.y := io.c
+  val mux1 = Module(new Mux2())
+  val mux2 = Module(new Mux2())
+  val mux3 = Module(new Mux2())
+  mux1.io.a := io.a
+  mux1.io.b := io.b
+  mux1.io.sel := io.sel(0)
+  mux2.io.a := io.c
+  mux2.io.b := io.d
+  mux2.io.sel := io.sel(0)
+  mux3.io.a := mux1.io.y
+  mux3.io.b := mux2.io.y
+  mux3.io.sel := io.sel(1)
+  io.y := mux3.io.y
 
   // ***** your code ends here *****
+}
+
+object Mux4 extends App {
+  emitVerilog(new Mux4())
 }

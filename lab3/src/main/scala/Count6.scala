@@ -8,9 +8,13 @@ class Count6 extends Module {
   val res = Wire(UInt())
 
   // ***** your code starts here *****
-
-  res := 0.U // dummy code to make it compile
-
+  val cnter_reg = RegInit(0.U(4.W))
+  when (cnter_reg === 6.U) {
+    cnter_reg := 0.U
+  } .otherwise {
+    cnter_reg := cnter_reg + 1.U
+  }
+  res := cnter_reg
   // ***** your code ends here *****
 
   io.dout := res

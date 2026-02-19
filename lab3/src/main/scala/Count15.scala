@@ -9,8 +9,9 @@ class Count15 extends Module {
 
   // ***** your code starts here *****
 
-  res := 0.U // dummy code to make it compile
-
+  val cnter_reg = RegInit(0.U(4.W))
+  cnter_reg := cnter_reg + 1.U
+  res := cnter_reg
   // ***** your code ends here *****
 
   io.dout := res
