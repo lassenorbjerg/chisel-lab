@@ -15,7 +15,7 @@ libraryDependencies += "edu.berkeley.cs" %% "chiseltest" % "6.0.0"
 // libraryDependencies += "edu.berkeley.cs" % "ip-contributions" % "0.5.1"
 */
 
-scalaVersion := "2.13.14"
+scalaVersion := "2.13.18"
 val chiselVersion = "3.6.1"
 addCompilerPlugin("edu.berkeley.cs" %% "chisel3-plugin" % chiselVersion cross CrossVersion.full)
 libraryDependencies += "edu.berkeley.cs" %% "chisel3" % chiselVersion

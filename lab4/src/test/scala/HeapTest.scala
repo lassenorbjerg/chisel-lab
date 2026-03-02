@@ -30,7 +30,8 @@ class HeapTest extends AnyFlatSpec with ChiselScalatestTester {
       dut.io.root.expect(220.U)
 
       // write more test code here
-
+      dut.io.empty.expect(false.B)
+      dut.io.full.expect(false.B)
     }
   }
 
@@ -41,6 +42,34 @@ class HeapTest extends AnyFlatSpec with ChiselScalatestTester {
     // set of inserted values.
     test(new TestHeap) { dut =>
       // write your test code here
+      
+      // setup a new operation
+      var lst = Array()
+      dut.io.empty.expect(true)
+
+      for (i <- 0 until 8) {
+        dut.io.op.poke(Operation.Insert)
+        dut.io.newValue.poke((i+1).U)
+        dut.io.valid.poke(1.B)
+        dut.clock.step()
+        dut.io.valid.poke(0.B)
+        while (!dut.io.ready.peekBoolean()) dut.clock.step()
+        dut.io.valid.poke(1.B)
+        lst.appended(i+1)
+      }
+      for (i <- 0 until 8) {
+        dut.io.op.poke(Operation.Insert)
+        dut.io.newValue.poke((i+1).U)
+        dut.io.valid.poke(1.B)
+        dut.clock.step()
+        dut.io.valid.poke(0.B)
+        while (!dut.io.ready.peekBoolean()) dut.clock.step()
+        dut.io.valid.poke(1.B)
+        lst.appended(i+1)
+      }
+
+
+
     }
   }
 
