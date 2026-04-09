@@ -15,6 +15,7 @@ usage() {
     echo "  -o, --outdir <output_directory> Specify the output directory (default: build)"
     echo "  -h, --help                      Display this help message"
     echo "Example: $0 -p xc7a35tcpg236-1 -x constr.xdc -t my_module -o gen foo.v bar.v my_module.v"
+    echo "xc7a35tcpg236-1 is basys board"
     exit 1
 }
 

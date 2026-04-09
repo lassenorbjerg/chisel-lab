@@ -1,6 +1,6 @@
-import chisel3._
-import chiseltest._
-import org.scalatest.flatspec.AnyFlatSpec
+  import chisel3._
+  import chiseltest._
+  import org.scalatest.flatspec.AnyFlatSpec
 
 class Mux4Spec extends AnyFlatSpec with ChiselScalatestTester {
   "Mux4 " should "pass" in {
