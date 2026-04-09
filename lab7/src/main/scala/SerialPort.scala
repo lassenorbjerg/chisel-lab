@@ -10,11 +10,11 @@ class SerialPort(frequ: Int) extends Module {
     val tx = Output(Bool())
     val led = Output(Bool())
 
-    val ready = Output(Bool())
-    val valid = Output(Bool())
-    val bits = Output(UInt(8.W))
-    val c = Output(UInt(4.W))
-    val c_t = Output(UInt(27.W))
+    // val ready = Output(Bool())
+    // val valid = Output(Bool())
+    // val bits = Output(UInt(8.W))
+    // val c = Output(UInt(4.W))
+    // val c_t = Output(UInt(27.W))
 
   })
 
@@ -52,11 +52,11 @@ class SerialPort(frequ: Int) extends Module {
 
 
 
-  io.valid := uart.io.channel.valid
-  io.ready := uart.io.channel.ready
-  io.bits := hello(cntr)
-  io.c := cntr
-  io.c_t := cntr_time
+  // io.valid := uart.io.channel.valid
+  // io.ready := uart.io.channel.ready
+  // io.bits := hello(cntr)
+  // io.c := cntr
+  // io.c_t := cntr_time
 }
 
 
